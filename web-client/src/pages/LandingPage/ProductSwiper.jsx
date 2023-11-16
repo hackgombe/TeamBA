@@ -33,7 +33,7 @@ export const ProductSwiper = () => {
   );
 };
 
-const SingleCard = ({ name, price, prev_value }) => {
+export const SingleCard = ({ name, price, prev_value, tableUse = false }) => {
   const [active, setActive] = React.useState("maize");
   const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
     Math.random() * 256
@@ -50,9 +50,11 @@ const SingleCard = ({ name, price, prev_value }) => {
 
   return (
     <div
-      className={`p-5 flex gap-4 rounded-lg  bg-white ${
+      className={`p-5 flex items-center gap-4 rounded-lg  bg-white ${
         // eslint-disable-next-line react/prop-types
-        active === name.toLowerCase() ? "shadow-2xl" : "shadow-none"
+        !tableUse && active === name.toLowerCase()
+          ? "shadow-2xl"
+          : "shadow-none"
       }`}
     >
       <div
@@ -62,7 +64,9 @@ const SingleCard = ({ name, price, prev_value }) => {
         }}
         className={`uppercase cursor-pointer ${getContrastingTextColor(
           randomColor
-        )} rounded-full w-[50px] h-[50px] flex items-center justify-center`}
+        )} rounded-full ${
+          !tableUse ? "" : ""
+        } w-[50px] h-[50px] flex items-center justify-center`}
       >
         {name[0] + name[2]}
       </div>
@@ -70,12 +74,14 @@ const SingleCard = ({ name, price, prev_value }) => {
         <h6>{name}</h6>
         <p className="flex text-sm justify-between items-center gap-5">
           <span>{formatToNaira(price)} (per bag)</span>
-          <span
-            className={price > prev_value ? "text-green-500" : "text-red-500"}
-          >
-            {" "}
-            {(((price - prev_value) / prev_value) * 100).toFixed(2)}%
-          </span>
+          {!tableUse && (
+            <span
+              className={price > prev_value ? "text-green-500" : "text-red-500"}
+            >
+              {" "}
+              {(((price - prev_value) / prev_value) * 100).toFixed(2)}%
+            </span>
+          )}
         </p>
       </div>
     </div>

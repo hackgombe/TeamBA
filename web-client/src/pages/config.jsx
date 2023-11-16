@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import LandingPage from "./LandingPage";
+import SingleProduct from "./products";
 
 const router = createBrowserRouter([
   {
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <div>About</div>,
+  },
+  {
+    path: "/products/:id",
+    element: <SingleProduct />,
   },
 ]);
 
