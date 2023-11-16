@@ -2,6 +2,7 @@ import { Button } from "@material-tailwind/react";
 import { StickyNavbar } from "../../components/Navabar";
 // import HeroStat from "../../assets/hero-chart.png";
 import MInput from "../../components/ui/MInput";
+import MarketSummary from "./MarketSummary";
 
 const LandingPage = () => {
   return (
@@ -10,6 +11,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <Hero />
       <Commodities />
+      <MarketSummary></MarketSummary>
     </div>
   );
 };
@@ -37,6 +39,7 @@ const Commodities = () => {
 
       <div className="mt-8">
         <MInput label="Hello" />
+        <div></div>
       </div>
     </div>
   );
@@ -59,7 +62,7 @@ const Hero = () => (
           <div className="w-[85%] mt-4 flex items-center gap-4">
             <HeroStat initial="MZ" commodity="Maize" value={8.4} />
             <HeroStat initial="RC" commodity="Rice" value={6.33} />
-            <HeroStat initial="BN" commodity="Beans" value={0.00} />
+            <HeroStat initial="BN" commodity="Beans" value={0.0} />
           </div>
         </div>
       </div>
@@ -67,19 +70,25 @@ const Hero = () => (
   </div>
 );
 
-const HeroStat = ({initial="", commodity="", value=0})=> {
-
-  const textStyle = value == 0 ? "text-white" : value > 0 && value <= 7 ? "text-green-400" : "text-[#BC9405]"
+const HeroStat = ({ initial = "", commodity = "", value = 0 }) => {
+  const textStyle =
+    value == 0
+      ? "text-white"
+      : value > 0 && value <= 7
+      ? "text-green-400"
+      : "text-[#BC9405]";
 
   return (
     <div className="w-full h-[50px] rounded-full p-2 bg-black/40 backdrop-blur-md flex items-center gap-3">
-      <div className="w-[35px] h-[35px] rounded-full bg-[#BC9405] flex items-center justify-center font-bold text-white text-sm">{initial}</div>
+      <div className="w-[35px] h-[35px] rounded-full bg-[#BC9405] flex items-center justify-center font-bold text-white text-sm">
+        {initial}
+      </div>
       <div className="">
         <p className="text-white font-bold">{commodity}</p>
         <p className={`${textStyle} text-sm`}>+{value.toFixed(2)}%</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default LandingPage;
