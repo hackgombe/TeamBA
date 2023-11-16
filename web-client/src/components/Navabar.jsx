@@ -5,7 +5,7 @@ import Logo from "../assets/logo.svg";
 import { useState } from "react";
 import { useWinScroll } from "../hooks";
 export function StickyNavbar() {
-  const [showBg, setShowBg] = useState(false);
+  const [showBg, setShowBg] = useState(!false);
 
   useWinScroll(
     (oldScrollY, scrollY) => {
