@@ -6,9 +6,10 @@ const MInput = (props) => {
  
 
   return (
-    <div className="w-[70%] h-[60px] flex items-center rounded-full bg-white px-4 gap-4 cursor-pointer">
-      <span className="text-gray-400"><UilSearch /></span>
-      <span>Search the Market here</span>
+    <div className="relative w-[50%] h-[60px]">
+      <input className="w-full h-full flex items-center rounded-full bg-white px-4 pl-10" placeholder={props.placeholder} />
+      <span className="text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"><UilSearch /></span>
+      <span className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 text-white rounded-full bg-black flex items-center justify-center"><UilSearch /></span>
     </div>
   );
 };

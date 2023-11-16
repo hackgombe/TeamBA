@@ -1,8 +1,10 @@
-import { Button } from "@material-tailwind/react";
-import { StickyNavbar } from "../../components/Navabar";
+import { Button } from "@material-tailwind/react"
+import { StickyNavbar } from "../../components/Navabar"
+import { UilSearch } from "@iconscout/react-unicons"
 // import HeroStat from "../../assets/hero-chart.png";
 import MInput from "../../components/ui/MInput";
 import MarketSummary from "./MarketSummary";
+import GradientLineChart from "./GradientLineChart";
 
 const LandingPage = () => {
   return (
@@ -11,7 +13,10 @@ const LandingPage = () => {
       {/* Hero Section */}
       <Hero />
       <Commodities />
-      <MarketSummary></MarketSummary>
+      <MarketSummary />
+      <div className="w-[70%] mx-auto">
+        <GradientLineChart />
+      </div>
     </div>
   );
 };
@@ -57,7 +62,10 @@ const Hero = () => (
       <div className="flex flex-col gap-10">
         <div>
           <></>
-          <MInput label="Search now" placeholder="Search for Market here" />
+          <div className="w-[50%] h-[60px] flex items-center rounded-full bg-white px-4 gap-4 cursor-pointer">
+            <span className="text-gray-400"><UilSearch /></span>
+            <span>Search the Market here</span>
+          </div>
         </div>
         <div>
           <div className="w-[85%] mt-4 flex items-center gap-4">
@@ -80,15 +88,17 @@ const HeroStat = ({ initial = "", commodity = "", value = 0 }) => {
       : "text-[#BC9405]";
 
   return (
-    <div className="w-full h-[50px] rounded-full p-2 bg-black/40 backdrop-blur-md flex items-center gap-3">
-      <div className="w-[35px] h-[35px] rounded-full bg-[#BC9405] flex items-center justify-center font-bold text-white text-sm">
-        {initial}
-      </div>
-      <div className="">
-        <p className="text-white font-bold">{commodity}</p>
-        <p className={`${textStyle} text-sm`}>+{value.toFixed(2)}%</p>
-      </div>
-    </div>
+    <>
+        <div className="w-full h-[50px] rounded-full p-2 bg-black/40 backdrop-blur-md flex items-center gap-3">
+          <div className="w-[35px] h-[35px] rounded-full bg-[#BC9405] flex items-center justify-center font-bold text-white text-sm">
+            {initial}
+          </div>
+          <div className="">
+            <p className="text-white font-bold">{commodity}</p>
+            <p className={`${textStyle} text-sm`}>+{value.toFixed(2)}%</p>
+          </div>
+        </div>
+    </>
   );
 };
 

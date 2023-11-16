@@ -1,5 +1,7 @@
-import LineChartWithFill from "../../components/LineChartWithFill";
-import { ProductSwiper } from "./ProductSwiper";
+import LineChartWithFill from "../../components/LineChartWithFill"
+import { ProductSwiper } from "./ProductSwiper"
+import { UilAngleRight } from "@iconscout/react-unicons"
+
 const chartData = {
   labels: ["January", "February", "March", "April", "May"],
   datasets: [
@@ -14,7 +16,7 @@ const chartData = {
 const MarketSummary = () => {
   return (
     <div className="mt-8 py-16 bg-white px-10">
-      <h2 className="font-semibold text-4xl">Market Summary&gt; </h2>
+      <h2 className="font-semibold text-4xl flex items-center gap-2">Market Summary<span><UilAngleRight /></span> </h2>
 
       <div className="mt-14">
         <div>
