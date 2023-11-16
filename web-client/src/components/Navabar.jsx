@@ -5,7 +5,6 @@ import Logo from "../assets/logo.svg";
 import { useState } from "react";
 import { useWinScroll } from "../hooks";
 export function StickyNavbar() {
-
   const [showBg, setShowBg] = useState(false);
 
   useWinScroll(
@@ -42,7 +41,13 @@ export function StickyNavbar() {
     },
   ];
   return (
-    <div className={`transition-all py-8 px-4 fixed left-1/2 -translate-x-1/2 flex items-center justify-center w-[90%] mt-4 rounded-full h-14 z-10 ${showBg ? "bg-[#BC9405]/60 backdrop-blur-md text-black" : "bg-transparent"}`}>
+    <div
+      className={`transition-all py-8 px-4 fixed left-1/2 -translate-x-1/2 flex items-center justify-center w-[90%] mt-4 rounded-full h-14 z-10 ${
+        showBg
+          ? "bg-[#BC9405]/60 backdrop-blur-md text-black"
+          : "bg-transparent"
+      }`}
+    >
       <div className="flex w-full h-full  justify-between items-center">
         <div>
           <img src={Logo} alt="Logo Market Version" className="w-[70px]" />

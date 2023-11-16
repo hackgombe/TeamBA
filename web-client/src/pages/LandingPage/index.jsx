@@ -55,6 +55,56 @@ const Commodities = () => {
         </div>
       </div>
 
+      <div className="flex justify-center gap-10 items-center my-24">
+        <div className="flex items-start flex-col gap-3">
+          <div className=" h-40 w-40">
+            <img
+              src="./rice.jpeg"
+              alt="organes"
+              className="w-full h-full rounded-3xl object-center"
+            />
+          </div>
+          <div className="ps-5">
+            <p className="text-white text-2xl">Rice</p>
+          </div>
+        </div>
+        <div className="flex items-start flex-col gap-3">
+          <div className=" h-40 w-40">
+            <img
+              src="./maize.jpeg"
+              alt="organes"
+              className="w-full h-full rounded-3xl object-center"
+            />
+          </div>
+          <div className="ps-5">
+            <p className="text-white text-2xl">Maize</p>
+          </div>
+        </div>{" "}
+        <div className="flex items-start flex-col gap-3">
+          <div className=" h-40 w-40 ">
+            <img
+              src="./tomatoes-feature.jpg"
+              alt="organes"
+              className="w-full h-full rounded-3xl object-center"
+            />
+          </div>
+          <div className="ps-5">
+            <p className="text-white text-2xl">Tomatoes</p>
+          </div>
+        </div>{" "}
+        <div className="flex items-start flex-col gap-3">
+          <div className="h-40 w-40 ">
+            <img
+              src="./oranges.jpeg"
+              alt="organes"
+              className="w-full h-full rounded-3xl object-center"
+            />
+          </div>
+          <div className="ps-5">
+            <p className="text-white text-2xl">Oranges</p>
+          </div>
+        </div>
+      </div>
       <Modal ref={ModalRef}></Modal>
     </div>
   );
@@ -76,7 +126,7 @@ const Hero = () => {
         <div className="flex flex-col gap-10">
           <div>
             <div onClick={() => ModalRef.current.openModal()}>
-              <div className="w-[50%] h-[60px] flex items-center rounded-full bg-white px-4 gap-4 cursor-pointer">
+              <div className="w-[85%] h-[60px] flex items-center rounded-full bg-white px-4 gap-4 cursor-pointer">
                 <span className="text-gray-400">
                   <UilSearch />
                 </span>
@@ -89,6 +139,59 @@ const Hero = () => {
               <HeroStat initial="MZ" commodity="Maize" value={8.4} />
               <HeroStat initial="RC" commodity="Rice" value={6.33} />
               <HeroStat initial="BN" commodity="Beans" value={0.0} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-6">
+        <div className="bg-white h-full flex items-center rounded-2xl mt-10 p-5 mx-8">
+          <div className="p-1 ">
+            <div className="flex  gap-4 items-center ">
+              {["commodities", "products", "Top Sellers"].map((item, idx) => (
+                <Button
+                  key={idx}
+                  onClick={() => {
+                    setActive(item.toLowerCase());
+                  }}
+                  className={`capitalize ${
+                    active === item.toLowerCase()
+                      ? "border-b-4 border-black"
+                      : "border-white border-b-4"
+                  } rounded-none   py-4 hover:shadow-none bg-white font-semibold text-black text-base  shadow-none`}
+                >
+                  {item}
+                </Button>
+              ))}
+            </div>
+
+            <div className="">
+              <Table
+                data={productsSearch
+                  .filter((i, idx) => idx < 3)
+                  .map((item) => {
+                    return {
+                      Products: (
+                        <SingleCard
+                          price={item["Current value"]}
+                          tableUse={true}
+                          name={item.Item}
+                        />
+                      ),
+
+                      ["Current value"]: formatToNaira(item["Current value"]),
+
+                      Change: (
+                        <span
+                          className={`${
+                            item.Change < 1 ? "text-red-500" : "text-green-500"
+                          }`}
+                        >
+                          {item.Change.toFixed(2)}
+                        </span>
+                      ),
+                    };
+                  })}
+              ></Table>
             </div>
           </div>
         </div>
