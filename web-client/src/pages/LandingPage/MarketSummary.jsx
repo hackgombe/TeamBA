@@ -1,5 +1,15 @@
 import LineChartWithFill from "../../components/LineChartWithFill";
 import { ProductSwiper } from "./ProductSwiper";
+const chartData = {
+  labels: ["January", "February", "March", "April", "May"],
+  datasets: [
+    {
+      label: "Sales Data",
+      data: [65, 59, 80, 81, 56],
+      // Other dataset options...
+    },
+  ],
+};
 
 const MarketSummary = () => {
   return (
@@ -13,7 +23,7 @@ const MarketSummary = () => {
       </div>
 
       <div className="mt-8">
-        <LineChartWithFill></LineChartWithFill>
+        <LineChartWithFill />
       </div>
     </div>
   );
