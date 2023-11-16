@@ -37,9 +37,10 @@ const Commodities = () => {
         </div>
       </div>
 
-      <div className="mt-8">
-        <MInput label="Hello" />
-        <div></div>
+      <div className="my-8 ">
+        <div className="flex items-center justify-center flex-col w-full">
+          <MInput placeholder="what are you looking for?" />
+        </div>
       </div>
     </div>
   );
