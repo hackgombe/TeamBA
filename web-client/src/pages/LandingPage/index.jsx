@@ -29,6 +29,31 @@ const LandingPage = () => {
 };
 const Commodities = () => {
   const ModalRef = React.useRef(null);
+
+
+  const commodities = [
+    {
+      img: "./rice.jpeg",
+      label: "Rice",
+      style: "translate-y-8"
+    },
+    {
+      img: "./maize.jpeg",
+      label: "Maize",
+      style: ""
+    },
+    {
+      img: "./tomatoes-feature.jpg",
+      label: "Tomatoes",
+      style: "translate-y-8"
+    },
+    {
+      img: "./oranges.jpeg",
+      label: "Oranges",
+      style: ""
+    }
+  ]
+
   return (
     <div className="py-10 w-full bg-black">
       <div className="mt-16 flex flex-col items-center justify-center">
@@ -57,54 +82,22 @@ const Commodities = () => {
       </div>
 
       <div className="flex justify-center gap-10 items-center my-24">
-        <div className="flex items-start flex-col gap-3">
-          <div className=" h-40 w-40">
-            <img
-              src="./rice.jpeg"
-              alt="organes"
-              className="w-full h-full rounded-3xl object-center"
-            />
-          </div>
-          <div className="ps-5">
-            <p className="text-white text-2xl">Rice</p>
-          </div>
-        </div>
-        <div className="flex items-start flex-col gap-3">
-          <div className=" h-40 w-40">
-            <img
-              src="./maize.jpeg"
-              alt="organes"
-              className="w-full h-full rounded-3xl object-center"
-            />
-          </div>
-          <div className="ps-5">
-            <p className="text-white text-2xl">Maize</p>
-          </div>
-        </div>{" "}
-        <div className="flex items-start flex-col gap-3">
-          <div className=" h-40 w-40 ">
-            <img
-              src="./tomatoes-feature.jpg"
-              alt="organes"
-              className="w-full h-full rounded-3xl object-center"
-            />
-          </div>
-          <div className="ps-5">
-            <p className="text-white text-2xl">Tomatoes</p>
-          </div>
-        </div>{" "}
-        <div className="flex items-start flex-col gap-3">
-          <div className="h-40 w-40 ">
-            <img
-              src="./oranges.jpeg"
-              alt="organes"
-              className="w-full h-full rounded-3xl object-center"
-            />
-          </div>
-          <div className="ps-5">
-            <p className="text-white text-2xl">Oranges</p>
-          </div>
-        </div>
+          {
+            commodities.map(({ img, label, style }, idx) => (
+              <div key={idx} className={`flex items-start flex-col gap-3 relative before:absolute before:left-1/2 before:-translate-x-1/2 before:-top-1 before:content-[""] before:w-[170px] before:h-[170px] before:rounded-3xl before:bg-[#BC9405]/20 before:backdrop-blur-md before:-z-[1] ${style}`}>
+                <div className=" h-40 w-40">
+                  <img
+                    src={img}
+                    alt="organes"
+                    className="w-full h-full rounded-3xl object-cover"
+                  />
+                </div>
+                <div className="ps-5">
+                  <p className="text-white text-2xl">{label}</p>
+                </div>
+              </div>
+            ))
+          }
       </div>
       <Modal ref={ModalRef}></Modal>
     </div>
@@ -120,6 +113,7 @@ const Hero = () => {
   useEffect(()=> {
     void async function(){
       const stats = await axios.get("http://localhost:8901/api/hero-stats");
+      console.log(stats)
       setHerostats(stats.data);
     }()
   }, [])
