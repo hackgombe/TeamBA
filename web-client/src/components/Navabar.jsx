@@ -20,7 +20,7 @@ export function StickyNavbar() {
 
   const data = [
     {
-      text: "product",
+      text: "products",
       link: "/product",
     },
     {
