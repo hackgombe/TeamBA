@@ -1,0 +1,224 @@
+/* Regular */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Thin */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-Thin.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Extra light */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-ExtraLight.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Light */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Medium */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Semi Bold */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Extra Bold */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Black */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-Black.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Italic Regular */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-Italic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Italic Thin */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-ThinItalic.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Italic Extra Light */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-ExtraLightItalic.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Italic Light */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-LightItalic.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Italic Medium */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Italic SemiBold */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-SemiBoldItalic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Italic Bold */
+@font-face {
+  font-family: "Urbanist";
+  src: url("./assets/fonts/Urbanist/static/Urbanist-BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Lato */
+/* Regular */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Thin */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+}
+
+/* Light */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* Bold */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Black */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+}
+
+/* Italic Regular */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Thin Italic */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-ThinItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 100;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-LightItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Black Italic */
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-BlackItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 900;
+}

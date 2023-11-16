@@ -10,7 +10,6 @@ const sellerSchema = new Schema(
       type: [Schema.Types.ObjectId],
       ref: "Products",
     },
-
     user: {
       type: mongoose.Types.ObjectId,
       ref: "Users",

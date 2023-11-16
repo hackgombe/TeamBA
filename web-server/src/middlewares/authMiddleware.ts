@@ -8,6 +8,7 @@ import userModel from "@models/userModel";
 import refreshTokenModel from "@models/refreshTokenModel";
 import { CookieExpiryTime } from "@utils/cookieTimeObj";
 import { ENV } from "@config/env";
+import sellerModel from "@models/sellerModel";
 
 declare global {
   namespace Express {
@@ -29,7 +30,11 @@ const isAuthenticated: AsyncRouteHandler<Request, Response, NextFunction> =
         new AppError("Please login to continue", StatusCodes.UNAUTHORIZED)
       );
     }
+    const seller = await sellerModel.findOne({
+      user: req.user.id,
+    });
 
+    req.user.seller = seller;
     return next();
   });
 
