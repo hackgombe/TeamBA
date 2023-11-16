@@ -5,12 +5,13 @@ import { UilSearch } from "@iconscout/react-unicons";
 import MInput from "../../components/ui/MInput";
 import MarketSummary from "./MarketSummary";
 import Modal from "../../components/modal";
-import React from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Table from "../../components/ui/Table";
 import { productsSearch } from "./data";
 import { SingleCard } from "./ProductSwiper";
 import { formatToNaira } from "../../utils";
 import GradientLineChart from "./GradientLineChart";
+import axios from "axios";
 
 const LandingPage = () => {
   return (
@@ -63,8 +64,16 @@ const Commodities = () => {
 const Hero = () => {
   const ModalRef = React.useRef(null);
   const [activeBtn, setActiveBtn] = React.useState("all");
-
   const [active, setActive] = React.useState("commodities");
+  const [herostats, setHerostats] = useState([]);
+
+  useEffect(()=> {
+    void async function(){
+      const stats = await axios.get("http://localhost:8901/api/hero-stats");
+      setHerostats(stats.data);
+    }()
+  }, [])
+  
   return (
     <div className="hero-img grid grid-cols-12 place-items-center h-screen w-full">
       <div className="col-span-6 flex flex-col gap-10 w-[80%] mx-auto">
@@ -85,11 +94,18 @@ const Hero = () => {
             </div>
           </div>
           <div>
-            <div className="w-[85%] mt-4 flex items-center gap-4">
-              <HeroStat initial="MZ" commodity="Maize" value={8.4} />
-              <HeroStat initial="RC" commodity="Rice" value={6.33} />
-              <HeroStat initial="BN" commodity="Beans" value={0.0} />
-            </div>
+            <Suspense>
+              <div className="w-[85%] mt-4 flex items-center gap-4">
+                {
+                  herostats.map(()=> (
+                    <HeroStat initial="MZ" commodity="Maize" value={8.4} />
+                  ))
+                }
+                {/* <HeroStat initial="MZ" commodity="Maize" value={8.4} />
+                <HeroStat initial="RC" commodity="Rice" value={6.33} />
+                <HeroStat initial="BN" commodity="Beans" value={0.0} /> */}
+              </div>
+            </Suspense>
           </div>
         </div>
       </div>
